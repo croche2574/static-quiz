@@ -16,4 +16,4 @@ export const Header = memo((props) => {
 
         </Box>
     )
-}, [])
+})
