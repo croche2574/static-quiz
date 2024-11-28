@@ -1,60 +1,27 @@
-import { Box, chakra, Container, Stack, Text, useBreakpointValue, VisuallyHidden } from "@chakra-ui/react"
+import { Box, Button, Separator, Flex, Stack} from "@chakra-ui/react"
 import React, { memo } from "react"
 import { useColorModeValue } from "../ui/color-mode"
-import { FaYoutube, FaDiscord, FaTwitter } from "react-icons/fa"
-
-const SocialButton = memo(({ children, label, href }) => {
-    return (
-        <chakra.button
-            bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-            rounded={'full'}
-            w={8}
-            h={8}
-            cursor={'pointer'}
-            as={'a'}
-            href={href}
-            display={'inline-flex'}
-            alignItems={'center'}
-            justifyContent={'center'}
-            transition={'background 0.3s ease'}
-            _hover={{
-                bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
-            }}>
-            <VisuallyHidden>{label}</VisuallyHidden>
-            {children}
-        </chakra.button>
-    )
-})
 
 export const Footer = memo((props) => {
-    console.log(typeof window)
+    const boxBG = useColorModeValue('gray.50', 'gray.900')
+    const boxColor = useColorModeValue('gray.700', 'gray.200')
+    const separatorColor = useColorModeValue('black', 'white')
     return (
         <Box
-            bg={useColorModeValue('gray.50', 'gray.900')}
-            color={useColorModeValue('gray.700', 'gray.200')}
+            bg={boxBG}
+            color={boxColor}
+            w={'100%'}
+            px={4}
             position={"fixed"}
-            bottom={0}
-            w={'100%'}>
-            <Stack
-                maxW={'8xl'}
-                px={4}
-                py={4}
-                direction={{ base: "column", md: "row" }}
-                spacing={4}
-                justify={{ base: 'center', md: 'space-between' }}
-                align={{ base: 'center', md: 'center' }}>
-                <Text>Enter copyright here.</Text>
-                <Stack direction={'row'} spacing={6}>
-                    <SocialButton label={'Discord'} href={'#'}>
-                        <FaDiscord />
-                    </SocialButton>
-                    <SocialButton label={'Twitter'} href={'#'}>
-                        <FaTwitter />
-                    </SocialButton>
-                    <SocialButton label={'Youtube'} href={'#'}>
-                        <FaYoutube />
-                    </SocialButton>
-                </Stack>
+            bottom={0}>
+            <Stack direction={'row'} alignItems={"center"}>
+                    <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
+                        github
+                    </Button>
+                    <Separator size={'md'} orientation="vertical" height="5" borderColor={separatorColor}/>
+                    <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
+                        ko-fi
+                    </Button>
             </Stack>
         </Box>
     )
