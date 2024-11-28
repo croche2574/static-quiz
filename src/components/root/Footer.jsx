@@ -31,9 +31,12 @@ export const Footer = memo((props) => {
     return (
         <Box
             bg={useColorModeValue('gray.50', 'gray.900')}
-            color={useColorModeValue('gray.700', 'gray.200')}>
+            color={useColorModeValue('gray.700', 'gray.200')}
+            position={"fixed"}
+            bottom={0}
+            w={'100%'}>
             <Stack
-                maxW={'6xl'}
+                maxW={'8xl'}
                 px={4}
                 py={4}
                 direction={{ base: "column", md: "row" }}
