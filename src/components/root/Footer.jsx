@@ -1,4 +1,4 @@
-import { Box, Button, chakra, Container, Stack, Text, useBreakpointValue, VisuallyHidden } from "@chakra-ui/react"
+import { Box, chakra, Container, Stack, Text, useBreakpointValue, VisuallyHidden } from "@chakra-ui/react"
 import React, { memo } from "react"
 import { useColorModeValue } from "../ui/color-mode"
 import { FaYoutube, FaDiscord, FaTwitter } from "react-icons/fa"
@@ -27,27 +27,16 @@ const SocialButton = memo(({ children, label, href }) => {
 })
 
 export const Footer = memo((props) => {
-    const variant = useBreakpointValue(
-        {
-          base: 'outline',
-          md: 'solid',
-        },
-        {
-          // Breakpoint to use when mediaqueries cannot be used, such as in server-side rendering
-          // (Defaults to 'base')
-          fallback: 'md',
-        },
-      )
-    console.log(variant)
+    console.log(typeof window)
     return (
         <Box
             bg={useColorModeValue('gray.50', 'gray.900')}
             color={useColorModeValue('gray.700', 'gray.200')}>
-            <Container
-                as={Stack}
+            <Stack
                 maxW={'6xl'}
+                px={4}
                 py={4}
-                direction={{ base: 'column', md: 'row' }}
+                direction={{ base: "column", md: "row" }}
                 spacing={4}
                 justify={{ base: 'center', md: 'space-between' }}
                 align={{ base: 'center', md: 'center' }}>
@@ -63,7 +52,7 @@ export const Footer = memo((props) => {
                         <FaYoutube />
                     </SocialButton>
                 </Stack>
-            </Container>
+            </Stack>
         </Box>
     )
 })
