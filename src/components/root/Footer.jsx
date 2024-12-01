@@ -1,4 +1,4 @@
-import { Box, Button, Separator, Flex, Stack} from "@chakra-ui/react"
+import { Box, Button, Separator, Flex, Stack, Center } from "@chakra-ui/react"
 import React, { memo } from "react"
 import { useColorModeValue } from "../ui/color-mode"
 
@@ -14,15 +14,17 @@ export const Footer = memo((props) => {
             px={4}
             position={"fixed"}
             bottom={0}>
-            <Stack direction={'row'} alignItems={"center"}>
+            <Center>
+                <Stack direction={'row'} alignItems={"center"}>
                     <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
                         github
                     </Button>
-                    <Separator size={'md'} orientation="vertical" height="5" borderColor={separatorColor}/>
+                    <Separator size={'md'} orientation="vertical" height="5" borderColor={separatorColor} />
                     <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
                         ko-fi
                     </Button>
-            </Stack>
+                </Stack>
+            </Center>
         </Box>
     )
 })
