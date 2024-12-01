@@ -7,7 +7,7 @@ import { Flex } from "@chakra-ui/react";
 
 export const Root = memo(() => {
     return (
-        <Flex direction={"column"}>
+        <Flex direction={"column"} minWidth={'100%'}>
             <Header />
             <PageBackground>
                 <Outlet />

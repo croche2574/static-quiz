@@ -6,7 +6,7 @@ import { useColorModeValue } from "../ui/color-mode";
 export const PageBackground = memo(({ children }) => {
     const bgColor = useColorModeValue('gray.200', 'gray.800')
     return (
-        <Container centerContent overflow={"hidden"} mt={0} bg={bgColor}>
+        <Container minHeight={'90vh'} minWidth={'100%'} centerContent overflow={"hidden"} mt={0} bg={bgColor}>
             {children}
         </Container>
     )
